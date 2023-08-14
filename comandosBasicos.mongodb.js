@@ -27,7 +27,8 @@ db.usuarios.find({}).limit(10)
 use('prueba')
 db.collection.find({}).skip(40).limit(10)
 
-
-
+//Supongamos que queremos ordenar los usuarios por edad, de mayor a menor.
+use('prueba')
+db.usuarios.find({}).sort({'edad':-1})
 
 
