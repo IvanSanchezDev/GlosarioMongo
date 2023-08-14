@@ -31,4 +31,20 @@ db.collection.find({}).skip(40).limit(10)
 use('prueba')
 db.usuarios.find({}).sort({'edad':-1})
 
+//ACTUALIZAR REGISTROS, en este caso buscara el registro donde el nombre del usuario sea "Ivan" y actualizara los datos que estan en el set
+use('prueba')
+db.usuarios.updateOne(
+   { nombre: "Ivan" },
+   {
+     $set: { nombre: "Camilo", edad:  35},
+   })
+
+//Actualizar varios registros, en este caso se actualizaran los usuarios que tengan la edad menor que 33 años
+use('prueba')
+   db.usuarios.updateMany(
+      { edad: { $lt: 33 } },
+      {
+        $set: { edad: 0}
+      }
+   )
 
