@@ -48,3 +48,9 @@ use('prueba')
       }
    )
 
+//borrar muchos documentos de acuerdo a un filtro
+   db.usuarios.deleteMany({ edad: 30 })
+   // Borrar un documento
+   db.usuarios.deleteOne( { nombre : "David" } )
+   // Borrar todos los documentos de una base datos
+   db.usuarios.deleteMany({})
